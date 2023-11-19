@@ -87,7 +87,7 @@ if len(dfP) != 0:
   st.markdown("<h1 style='text-align: left; color: blue;'>Auditoria dos Dados</h1>", unsafe_allow_html=True)
   st.dataframe(dfP.sort_values(by='D/H', ascending=True))  
 
-  st.markdown("<h1 style='text-align: left; color: blue;'>Participação dos Tutores (Alunos Mackenzie)</h1>", unsafe_allow_html=True)
+  st.markdown("<h1 style='text-align: left; color: blue;font-size: 14px'>Participação dos Tutores (Alunos Mackenzie)</h1>", unsafe_allow_html=True)
   selecao01T = dfT['Classificacao']=='Tutor(a)'
   df01T = dfT[selecao01T]
   resumoT = pd.DataFrame(df01T["Nome"].value_counts())
