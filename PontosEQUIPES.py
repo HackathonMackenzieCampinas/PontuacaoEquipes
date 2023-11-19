@@ -125,5 +125,5 @@ if len(dfP) != 0:
   st.image(image03, width=600, caption='Classificação Final')
   st.markdown(
   """
-  [Link para WebApp de Gestão de Dúvidas e Respostas](https://hackathonmackenziecampinas-gestaoequipes.streamlit.app)
+  [Clique aqui e acesse o WebApp de Gestão de Dúvidas e Respostas!](https://hackathonmackenziecampinas-gestaoequipes.streamlit.app)
   """)
