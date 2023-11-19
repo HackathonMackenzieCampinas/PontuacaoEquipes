@@ -7,7 +7,7 @@ import pandas as pd
 import altair as alt
 import matplotlib.pyplot as plt
 from wordcloud import WordCloud, STOPWORDS, ImageColorGenerator
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 image01 = Image.open('ImagemLateral.jpg')
 image02 = Image.open('Ranking.jpg')
 st.sidebar.image(image01, width=300, caption='Mack Week CCT 2022') 
@@ -96,7 +96,7 @@ if len(dfP) != 0:
     dfPorcentPART = pd.DataFrame(PorcentPART)
     dfPorcentPART.index = resumoT.index
     dfPorcentPART.columns = ['qtdRESPOSTAS']
-    st.write(dfPorcentPART)
+    st.info(dfPorcentPART)
            
   st.markdown("<h1 style='text-align: left; color: blue;'>Auditoria dos Dados</h1>", unsafe_allow_html=True)
   st.dataframe(dfP.sort_values(by='D/H', ascending=True))  
