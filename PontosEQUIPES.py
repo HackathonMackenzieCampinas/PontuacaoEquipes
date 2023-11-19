@@ -29,8 +29,8 @@ mystyle1 =   '''<style> p{text-align:center;}</style>'''
 st.markdown(mystyle1, unsafe_allow_html=True) 
 st.markdown(
 """
-###### Drive para acessar Relatórios e Projetos enviados pelas Equipes:
-- [Link GoogleDrive](https://drive.google.com/drive/folders/1XqsLFmxDp5bIpoUbdAlJveS04JccW6_G?usp=sharing)
+[Drive para acessar Relatórios e Projetos enviados pelas Equipes:](https://drive.google.com/drive/folders/1XqsLFmxDp5bIpoUbdAlJveS04JccW6_G?usp=sharing)
+""")
 #============================================================================================
 #IMPORTAÇÃO DOS DADOS DA PLANILHA Pontuação das Equipes II Hackathon Mackenzie-Logithink-IMA (hackathon.cct.2023@gmail.com)
 rP = requests.get('https://docs.google.com/spreadsheets/d/e/2PACX-1vQj4zhEz_COCvFMKnizUaRZz87rl8tOVv3b-U7q9fQFMauMRbT7vJDIlI8HPSLAdoCsthRh6yEigLsX/pub?gid=87278842&single=true&output=csv')
