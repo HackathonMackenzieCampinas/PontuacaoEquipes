@@ -7,7 +7,7 @@ import pandas as pd
 import altair as alt
 import matplotlib.pyplot as plt
 from wordcloud import WordCloud, STOPWORDS, ImageColorGenerator
-
+import matplotlib.pyplot as plt
 image01 = Image.open('ImagemLateral.jpg')
 image02 = Image.open('Ranking.jpg')
 st.sidebar.image(image01, width=300, caption='Mack Week CCT 2022') 
@@ -48,6 +48,13 @@ resumo = dfP.groupby(["Equipe"]).sum()
 dfresumo = pd.DataFrame(resumo)
 n=len(rotulo)
 #============================================================================================
+# IMPORTAÇÃO DO FORM RESPOSTAS ÀS DÚVIDAS PELOS TUTORES
+rT = requests.get('https://docs.google.com/spreadsheets/d/e/2PACX-1vTIxe7VmjCRpyVvwKaajuRFyp6T1MRGOx_GCUg7ghiA2QWbiNLYam-xpLYhXE2Gdn6RgLjRRJPD4WZ-/pub?gid=1131399848&single=true&output=csv')
+dataT = rT.content
+dfT = pd.read_csv(BytesIO(dataT))
+dfT.columns = ['D/T', 'e-mail', 'Equipe', 'Nome', 'Resposta', 'OBS', 'mail', 'Classificacao' ]
+dfT.fillna(value = ' ',  inplace = True)
+#===============================================
 if len(dfP) != 0:
   vetNOTAS = []
   colNotas1,colNotas2, colNotas3 = st.columns((1,1,1))
@@ -76,6 +83,29 @@ if len(dfP) != 0:
     st.markdown("<h1 style='text-align: justify; font-family:arial; font-size: 14px; color: gray;'>Este painel tem o objetivo de auxiliar a Equipe de Gestão do Hackathon 2023 escolher as 5 equipes finalistas que participarão do Evento Final, disputando uma das 3 vagas na dinâmica Elevator Pitch.</h1>", unsafe_allow_html=True)
     st.markdown("<h1 style='text-align: left; color: blue; font-size: 20px'>Ranking de Citação nas Avaliações</h1>", unsafe_allow_html=True)
     st.write(dfP["Equipe"].value_counts())
+
+    selecao01T = dfT['Classificacao']=='Tutor(a)'
+    df01T = dfT[selecao01T]
+    resumoT = pd.DataFrame(df01T["Nome"].value_counts())
+    resumoT.columns = ['qtdRESPOSTAS']
+    PorcentPART = []
+    nTotal = df01T["Nome"].value_counts().sum()
+    for i in range(len(resumoT['qtdRESPOSTAS'])):
+      part = resumoT['qtdRESPOSTAS'][i]/nTotal
+      PorcentPART.append(part)
+    dfPorcentPART = pd.DataFrame(PorcentPART)
+    dfPorcentPART.index = resumoT.index
+    dfPorcentPART.columns = ['qtdRESPOSTAS']
+    print(dfPorcentPART)
+   
+    labels = 'Frogs', 'Hogs', 'Dogs', 'Logs'
+    sizes = [15, 30, 45, 10]
+    
+    fig, ax = plt.subplots()
+    ax.pie(dfPorcentPART['qtdRESPOSTAS'], labels=resumoT.index, autopct='%1.1f%%')
+    
+    
+      
   
   st.markdown("<h1 style='text-align: left; color: blue;'>Auditoria dos Dados</h1>", unsafe_allow_html=True)
   st.dataframe(dfP.sort_values(by='D/H', ascending=True))  
