@@ -114,7 +114,7 @@ if len(dfP) != 0:
     dfPorcentPART.columns = ['%Participação']
     st.dataframe(dfPorcentPART)
   with coluna2:
-    st.markdown("<h1 style='text-align: justify; color: DarkBlue; font-size: 16px'>Resumo dos Tutores por Equipe:</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: justify; color: Blue; font-size: 18px'>Relação de Equipes e Tutores</h1>", unsafe_allow_html=True)
     st.markdown("<h1 style='text-align: justify; color: black; font-size: 12px'>Equipe 03: Elisabete Olimpio</h1>", unsafe_allow_html=True)
     st.markdown("<h1 style='text-align: justify; color: black; font-size: 12px'>Equipe 06: Gabriel Ferrarese</h1>", unsafe_allow_html=True)
     st.markdown("<h1 style='text-align: justify; color: black; font-size: 12px'>Equipe 07: Otávio Sigolo</h1>", unsafe_allow_html=True)
