@@ -12,6 +12,7 @@ import plotly.express as px
 
 image01 = Image.open('ImagemLateral.jpg')
 image02 = Image.open('Ranking.jpg')
+image03 = Image.open('https://github.com/HackathonMackenzieCampinas/PontuacaoEquipes/blob/main/Nuvem_de_Palavras_DUVIDAS.png')
 st.sidebar.image(image01, width=300, caption='Mack Week CCT 2022') 
 st.sidebar.markdown("<h1 style='text-align: justify; color: DarkBlue; font-size: 14px'>O evento Hackathon é um desafio de inovação onde os alunos, em suas equipes formadas, concorrerão com suas ideias e propostas de soluções para um dos desafios a seguir:</h1>", unsafe_allow_html=True)
 st.sidebar.markdown("<h1 style='text-align: justify; color: black; font-size: 14px'>Resumo dos Desafios - 2º Hackathon 2023</h1>", unsafe_allow_html=True)
@@ -119,3 +120,4 @@ if len(dfP) != 0:
     st.markdown("<h1 style='text-align: justify; color: black; font-size: 12px'>Equipe 12: Luana Paes</h1>", unsafe_allow_html=True)
     st.markdown("<h1 style='text-align: justify; color: black; font-size: 12px'>Equipe 14: Ana Laura</h1>", unsafe_allow_html=True)
     st.markdown("<h1 style='text-align: justify; color: black; font-size: 12px'>Equipe 15: Roberto Guimaraes</h1>", unsafe_allow_html=True)
+  st.image(image03, width=600, caption='Classificação Final')
