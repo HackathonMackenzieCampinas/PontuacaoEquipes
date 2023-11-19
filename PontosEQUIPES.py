@@ -92,7 +92,7 @@ if len(dfP) != 0:
 
   coluna1, coluna2 = st.columns((1,1))
   with coluna1:
-    st.markdown("<h1 style='text-align: left; color: blue;font-size: 18px'>Participação dos Tutores (Alunos Mackenzie)</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: left; color: blue;font-size: 20px'>Participação dos Tutores (Alunos Mackenzie)</h1>", unsafe_allow_html=True)
     selecao01T = dfT['Classificacao']=='Tutor(a)'
     df01T = dfT[selecao01T]
     resumoT = pd.DataFrame(df01T["Nome"].value_counts())
