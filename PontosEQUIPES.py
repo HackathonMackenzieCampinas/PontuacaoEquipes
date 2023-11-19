@@ -87,27 +87,29 @@ if len(dfP) != 0:
   st.markdown("<h1 style='text-align: left; color: blue;'>Auditoria dos Dados</h1>", unsafe_allow_html=True)
   st.dataframe(dfP.sort_values(by='D/H', ascending=True))  
 
-  st.markdown("<h1 style='text-align: left; color: blue;font-size: 14px'>Participação dos Tutores (Alunos Mackenzie)</h1>", unsafe_allow_html=True)
-  selecao01T = dfT['Classificacao']=='Tutor(a)'
-  df01T = dfT[selecao01T]
-  resumoT = pd.DataFrame(df01T["Nome"].value_counts())
-  resumoT.columns = ['qtdRESPOSTAS']
-  PorcentPART = []
-  nTotal = df01T["Nome"].value_counts().sum()
-  for i in range(len(resumoT['qtdRESPOSTAS'])):
-    part = round(100*resumoT['qtdRESPOSTAS'][i]/nTotal,2)
-    PorcentPART.append(str(part)+"%")
-  dfPorcentPART = pd.DataFrame(PorcentPART)
-  dfPorcentPART.index = resumoT.index
-  dfPorcentPART.columns = ['%Participação']
-  st.dataframe(dfPorcentPART)
-
-  st.markdown("<h1 style='text-align: justify; color: DarkBlue; font-size: 14px'>Resumo dos Tutores por Equipe:</h1>", unsafe_allow_html=True)
-  st.markdown("<h1 style='text-align: justify; color: black; font-size: 12px'>Equipe 03: Elisabete Olimpio</h1>", unsafe_allow_html=True)
-  st.markdown("<h1 style='text-align: justify; color: black; font-size: 12px'>Equipe 06: Gabriel Ferrarese</h1>", unsafe_allow_html=True)
-  st.markdown("<h1 style='text-align: justify; color: black; font-size: 12px'>Equipe 07: Otávio Sigolo</h1>", unsafe_allow_html=True)
-  st.markdown("<h1 style='text-align: justify; color: black; font-size: 12px'>Equipe 08: Beatriz Scarpato</h1>", unsafe_allow_html=True)
-  st.markdown("<h1 style='text-align: justify; color: black; font-size: 12px'>Equipe 10: Romualdo dos Santos</h1>", unsafe_allow_html=True)
-  st.markdown("<h1 style='text-align: justify; color: black; font-size: 12px'>Equipe 11: Laura Gurgel</h1>", unsafe_allow_html=True)
-  st.markdown("<h1 style='text-align: justify; color: black; font-size: 12px'>Equipe 12: Luana Paes</h1>", unsafe_allow_html=True)
-  st.markdown("<h1 style='text-align: justify; color: black; font-size: 12px'>Equipe 15: Roberto Guimaraes</h1>", unsafe_allow_html=True)
+  coluna1, coluna2 = st.columns((1,1))
+  with coluna1:
+    st.markdown("<h1 style='text-align: left; color: blue;font-size: 14px'>Participação dos Tutores (Alunos Mackenzie)</h1>", unsafe_allow_html=True)
+    selecao01T = dfT['Classificacao']=='Tutor(a)'
+    df01T = dfT[selecao01T]
+    resumoT = pd.DataFrame(df01T["Nome"].value_counts())
+    resumoT.columns = ['qtdRESPOSTAS']
+    PorcentPART = []
+    nTotal = df01T["Nome"].value_counts().sum()
+    for i in range(len(resumoT['qtdRESPOSTAS'])):
+      part = round(100*resumoT['qtdRESPOSTAS'][i]/nTotal,2)
+      PorcentPART.append(str(part)+"%")
+    dfPorcentPART = pd.DataFrame(PorcentPART)
+    dfPorcentPART.index = resumoT.index
+    dfPorcentPART.columns = ['%Participação']
+    st.dataframe(dfPorcentPART)
+  with coluna2:
+    st.markdown("<h1 style='text-align: justify; color: DarkBlue; font-size: 16px'>Resumo dos Tutores por Equipe:</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: justify; color: black; font-size: 12px'>Equipe 03: Elisabete Olimpio</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: justify; color: black; font-size: 12px'>Equipe 06: Gabriel Ferrarese</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: justify; color: black; font-size: 12px'>Equipe 07: Otávio Sigolo</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: justify; color: black; font-size: 12px'>Equipe 08: Beatriz Scarpato</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: justify; color: black; font-size: 12px'>Equipe 10: Romualdo dos Santos</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: justify; color: black; font-size: 12px'>Equipe 11: Laura Gurgel</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: justify; color: black; font-size: 12px'>Equipe 12: Luana Paes</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: justify; color: black; font-size: 12px'>Equipe 15: Roberto Guimaraes</h1>", unsafe_allow_html=True)
