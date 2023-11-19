@@ -123,3 +123,7 @@ if len(dfP) != 0:
   
   st.markdown("<h1 style='text-align: left; color: blue;font-size: 20px'>Núvem de Palavras obtida a partir das dúvidas enviadas pelos alunos</h1>", unsafe_allow_html=True)
   st.image(image03, width=600, caption='Classificação Final')
+  st.markdown(
+  """
+  [Link para WebApp de Gestão de Dúvidas e Respostas](https://hackathonmackenziecampinas-gestaoequipes.streamlit.app)
+  """)
