@@ -8,6 +8,8 @@ import altair as alt
 import matplotlib.pyplot as plt
 from wordcloud import WordCloud, STOPWORDS, ImageColorGenerator
 #import matplotlib.pyplot as plt
+import plotly.express as px
+
 image01 = Image.open('ImagemLateral.jpg')
 image02 = Image.open('Ranking.jpg')
 st.sidebar.image(image01, width=300, caption='Mack Week CCT 2022') 
@@ -117,3 +119,21 @@ if len(dfP) != 0:
     st.markdown("<h1 style='text-align: justify; color: black; font-size: 12px'>Equipe 12: Luana Paes</h1>", unsafe_allow_html=True)
     st.markdown("<h1 style='text-align: justify; color: black; font-size: 12px'>Equipe 14: Ana Laura</h1>", unsafe_allow_html=True)
     st.markdown("<h1 style='text-align: justify; color: black; font-size: 12px'>Equipe 15: Roberto Guimaraes</h1>", unsafe_allow_html=True)
+  
+  fig = px.scatter(
+    dfPorcentPART.query("TITULO"),
+    x="gdpPercap",
+    y="lifeExp",
+    size="pop",
+    color="continent",
+    hover_name="country",
+    log_x=True,
+    size_max=60)
+  tab1, tab2 = st.tabs(["Streamlit theme (default)", "Plotly native theme"])
+  with tab1:
+      # Use the Streamlit theme.
+      # This is the default. So you can also omit the theme argument.
+      st.plotly_chart(fig, theme="streamlit", use_container_width=True)
+  with tab2:
+      # Use the native Plotly theme.
+      st.plotly_chart(fig, theme=None, use_container_width=True)
