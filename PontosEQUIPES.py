@@ -96,7 +96,7 @@ if len(dfP) != 0:
     dfPorcentPART = pd.DataFrame(PorcentPART)
     dfPorcentPART.index = resumoT.index
     dfPorcentPART.columns = ['qtdRESPOSTAS']
-    st.info(dfPorcentPART)
+    st.dataframe(dfPorcentPART)
            
   st.markdown("<h1 style='text-align: left; color: blue;'>Auditoria dos Dados</h1>", unsafe_allow_html=True)
   st.dataframe(dfP.sort_values(by='D/H', ascending=True))  
