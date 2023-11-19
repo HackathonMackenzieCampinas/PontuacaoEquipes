@@ -96,16 +96,7 @@ if len(dfP) != 0:
     dfPorcentPART = pd.DataFrame(PorcentPART)
     dfPorcentPART.index = resumoT.index
     dfPorcentPART.columns = ['qtdRESPOSTAS']
-    print(dfPorcentPART)
-   
-    labels = 'Frogs', 'Hogs', 'Dogs', 'Logs'
-    sizes = [15, 30, 45, 10]
-    
-    fig, ax = plt.subplots()
-    ax.pie(dfPorcentPART['qtdRESPOSTAS'], labels=resumoT.index, autopct='%1.1f%%')
-    
-    
-      
-  
+    st.write(dfPorcentPART)
+           
   st.markdown("<h1 style='text-align: left; color: blue;'>Auditoria dos Dados</h1>", unsafe_allow_html=True)
   st.dataframe(dfP.sort_values(by='D/H', ascending=True))  
