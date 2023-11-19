@@ -92,7 +92,7 @@ if len(dfP) != 0:
 
   coluna1, coluna2 = st.columns((1,1))
   with coluna1:
-    st.markdown("<h1 style='text-align: left; color: blue;font-size: 14px'>Participação dos Tutores (Alunos Mackenzie)</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: left; color: blue;font-size: 18px'>Participação dos Tutores (Alunos Mackenzie)</h1>", unsafe_allow_html=True)
     selecao01T = dfT['Classificacao']=='Tutor(a)'
     df01T = dfT[selecao01T]
     resumoT = pd.DataFrame(df01T["Nome"].value_counts())
@@ -115,4 +115,5 @@ if len(dfP) != 0:
     st.markdown("<h1 style='text-align: justify; color: black; font-size: 12px'>Equipe 10: Romualdo dos Santos</h1>", unsafe_allow_html=True)
     st.markdown("<h1 style='text-align: justify; color: black; font-size: 12px'>Equipe 11: Laura Gurgel</h1>", unsafe_allow_html=True)
     st.markdown("<h1 style='text-align: justify; color: black; font-size: 12px'>Equipe 12: Luana Paes</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: justify; color: black; font-size: 12px'>Equipe 14: Ana Laura</h1>", unsafe_allow_html=True)
     st.markdown("<h1 style='text-align: justify; color: black; font-size: 12px'>Equipe 15: Roberto Guimaraes</h1>", unsafe_allow_html=True)
