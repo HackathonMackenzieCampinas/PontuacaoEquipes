@@ -95,8 +95,8 @@ if len(dfP) != 0:
   PorcentPART = []
   nTotal = df01T["Nome"].value_counts().sum()
   for i in range(len(resumoT['qtdRESPOSTAS'])):
-    part = resumoT['qtdRESPOSTAS'][i]/nTotal
-    PorcentPART.append(part)
+    part = round(100*resumoT['qtdRESPOSTAS'][i]/nTotal,2)
+    PorcentPART.append(str(part)+"%")
   dfPorcentPART = pd.DataFrame(PorcentPART)
   dfPorcentPART.index = resumoT.index
   dfPorcentPART.columns = ['qtdRESPOSTAS']
