@@ -29,7 +29,7 @@ mystyle1 =   '''<style> p{text-align:center;}</style>'''
 st.markdown(mystyle1, unsafe_allow_html=True) 
 st.markdown(
 """
-[Drive para acessar Relatórios e Projetos enviados pelas Equipes:](https://drive.google.com/drive/folders/1XqsLFmxDp5bIpoUbdAlJveS04JccW6_G?usp=sharing)
+[Drive para acessar Relatórios e Projetos enviados pelas Equipes](https://drive.google.com/drive/folders/1XqsLFmxDp5bIpoUbdAlJveS04JccW6_G?usp=sharing)
 """)
 #============================================================================================
 #IMPORTAÇÃO DOS DADOS DA PLANILHA Pontuação das Equipes II Hackathon Mackenzie-Logithink-IMA (hackathon.cct.2023@gmail.com)
