@@ -1,0 +1,11 @@
+G:\
+cd G:\webappPontosEQUIPES
+conda activate streamlit
+
+streamlit run PontosEQUIPES.py
+
+python -m pip install --upgrade streamlit
+python -m pip install --upgrade streamlit-chat
+python -m pip install --upgrade wordcloud
+python -m pip install --upgrade matplotlib
+
