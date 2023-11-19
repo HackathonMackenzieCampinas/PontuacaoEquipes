@@ -99,5 +99,5 @@ if len(dfP) != 0:
     PorcentPART.append(str(part)+"%")
   dfPorcentPART = pd.DataFrame(PorcentPART)
   dfPorcentPART.index = resumoT.index
-  dfPorcentPART.columns = ['qtdRESPOSTAS']
+  dfPorcentPART.columns = ['%Participação']
   st.dataframe(dfPorcentPART)
