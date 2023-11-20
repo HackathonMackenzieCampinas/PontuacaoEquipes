@@ -36,7 +36,7 @@ st.markdown(
 """)
 st.markdown(
   """
-  [Clique aqui p/ fomulário de Avaliação das Equipes](https://forms.gle/DFUarZS1d6aXfzy77)
+  [Clique aqui p/ formulário de Avaliação das Equipes](https://forms.gle/DFUarZS1d6aXfzy77)
   """)
 #============================================================================================
 #IMPORTAÇÃO DOS DADOS DA PLANILHA Pontuação das Equipes II Hackathon Mackenzie-Logithink-IMA (hackathon.cct.2023@gmail.com)
